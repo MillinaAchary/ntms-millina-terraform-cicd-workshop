@@ -30,7 +30,7 @@ jobs:
           terraform_version: 1.7.0
 
       - name: Terraform fmt check
-        run: terraform fmt -recursive
+        run: terraform fmt -check -recursive
 
       - name: Terraform validate
         run: terraform validate
