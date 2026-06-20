@@ -5,11 +5,16 @@ terraform {
       version = "~> 4.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name = "rg-terraform-state"
+    storage_account_name = "stntmstfstate"
+    container_name = "milina" #replace with your name
+    key = "milina.terraform.tfstate" #replace with your name
+  }
 }
 
 provider "azurerm" {
   # Configuration options
   features {}
-
 
 }
